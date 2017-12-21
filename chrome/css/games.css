@@ -1,0 +1,11 @@
+.score-icon {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 6px;
+  min-width: 48px;
+  text-align: center; }

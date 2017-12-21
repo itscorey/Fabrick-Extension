@@ -1,0 +1,51 @@
+.critic-score{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 6px 0px;
+    float:left;
+    width:285px;
+    
+    .score-box{
+        color: white;
+        float: left;
+        padding: 16px 18px;
+        font-size: 24px;
+        min-width: 71px;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .score-text{
+        float: left;
+        margin-left: 6px;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    
+    .score-count{
+        font-weight: 200;
+        font-size: 14px;
+        margin-left: 6px;
+        float: left;
+        width: 175px;
+    }
+    
+    .score-circle{
+        color: white;
+        float: left;
+        padding: 16px 14px;
+        font-size: 24px;
+        min-width: 63px;
+        font-weight: 400;
+        text-align: center;
+        border-radius:100px;
+    }
+}
+
+.view-button{
+    float: right;
+    position: relative;
+    top: -38px;
+    margin-top: 6px;
+    margin-right: 12px;
+}

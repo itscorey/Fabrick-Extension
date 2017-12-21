@@ -1,0 +1,74 @@
+{
+    "manifest_version": 2,
+    "name": "Fabrick for Roblox",
+    "short_name": "Fabrick",
+    "description": "Adds Fabrick's features onto roblox so that you can easily view scores, games, discussions, changelogs and more!",
+    "icons": { "16": "/icons/icon16.png", "48": "/icons/icon48.png", "128": "/icons/icon128.png" },
+    "version": "1.9.9",
+    "permissions": ["https://fabrick.me/*", "notifications", "gcm", "storage"],
+    "background": {
+      "page": "/background/background.html"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "/lib/jquery-3.2.1.min.js",
+                "/lib/functions.js",
+                "/preload/games.js"
+            ],
+            "matches": [ "*://*.roblox.com/games*" ],
+            "run_at": "document_start"
+        },
+        {
+            "js": [
+                "/content/games.js"
+            ],
+            "css": [
+                "/css/games.css",
+                "/css/lib/loading.css"
+            ],
+            "matches": [ "*://*.roblox.com/games*" ],
+            "run_at": "document_end"
+        },
+        {
+            "js": [
+                "/lib/jquery-3.2.1.min.js",
+                "/lib/tinysort.min.js",
+                "/lib/functions.js",
+                "/preload/game_page.js"
+            ],
+            "css": [
+                "/css/game_page.css"
+            ],
+            "matches": [ "*://*.roblox.com/games/*/*" ],
+            "run_at": "document_start"
+        },
+        {
+            "js": [
+                "/content/game_page.js"
+            ],
+            "matches": [ "*://*.roblox.com/games/*/*" ],
+            "run_at": "document_end"
+        },
+        {
+            "js": [
+                "/lib/jquery-3.2.1.min.js",
+                "/lib/functions.js",
+                "/preload/home.js"
+            ],
+            "matches": [ "*://*.roblox.com/home" ],
+            "run_at": "document_start"
+        },
+        {
+            "js": [
+                "/content/home.js"
+            ],
+            "css": [
+                "/css/games.css",
+                "/css/lib/loading.css"
+            ],
+            "matches": [ "*://*.roblox.com/home" ],
+            "run_at": "document_end"
+        }
+    ]
+}
