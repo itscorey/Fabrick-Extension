@@ -25,8 +25,13 @@ getData.done(function() {
         }
     }
 
-    var fabFollow = $("<div>").attr({"class": "follow-button"}).insertAfter(useScore);
-    $("<a>").attr({"class": "btn-control-md"}).text("Follow Updates").appendTo(fabFollow);
+    var fabButtons = $("<div>").attr({"class": "fabrick-buttons"}).insertAfter(useScore);
+
+    var fabReview = $("<div>").attr({"class": "review-button"}).appendTo(fabButtons);
+    $("<a>").attr({"class": "btn-control-sm", "href": "https://fabrick.me/create/"+id}).text("Create Review").appendTo(fabReview);
+
+    var fabFollow = $("<div>").attr({"class": "follow-button"}).appendTo(fabButtons);
+    $("<a>").attr({"class": "btn-control-sm"}).text("Follow Updates").appendTo(fabFollow);
     $.getJSON( "https://fabrick.me/notifications/"+id, function( data ) {
       var following = data.Following;
       if(following){
@@ -34,8 +39,8 @@ getData.done(function() {
         $(".follow-button a").addClass("btn-unfollow");
       }
     });
-    var fabView = $("<div>").attr({"class": "view-button"}).insertAfter(useScore);
-    $("<a>").attr({"href": "https://fabrick.me/game/"+id, "target": "_blank", "class": "btn-secondary-md"}).text("View on Fabrick").appendTo(fabView);
+    var fabView = $("<div>").attr({"class": "view-button"}).appendTo(fabButtons);
+    $("<a>").attr({"href": "https://fabrick.me/game/"+id, "target": "_blank", "class": "btn-secondary-sm"}).text("View on Fabrick").appendTo(fabView);
 
     $( ".follow-button a" ).click(function() {
       $.getJSON( "https://fabrick.me/notifications/"+id+"/subscribe", function( data ) {
@@ -56,6 +61,11 @@ getData.done(function() {
 });
 
 getData.fail(function() {
-    var fabView = $("<div>").attr({"class": "view-button"}).insertAfter(".game-calls-to-action");
-    $("<a>").attr({"href": "https://fabrick.me/game/"+id, "target": "_blank", "class": "btn-secondary-md"}).text("View on Fabrick").appendTo(fabView);
+    var fabButtons = $("<div>").attr({"class": "fabrick-buttons"}).insertAfter(".game-calls-to-action");
+
+    var fabReview = $("<div>").attr({"class": "review-button"}).appendTo(fabButtons);
+    $("<a>").attr({"class": "btn-control-sm", "href": "https://fabrick.me/create/"+id}).text("Create Review").appendTo(fabReview);
+    
+    var fabView = $("<div>").attr({"class": "view-button"}).appendTo(fabButtons);
+    $("<a>").attr({"href": "https://fabrick.me/game/"+id, "target": "_blank", "class": "btn-secondary-sm"}).text("View on Fabrick").appendTo(fabView);
 });
