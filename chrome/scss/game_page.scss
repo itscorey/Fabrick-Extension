@@ -42,24 +42,30 @@
     }
 }
 
-.view-button{
+.fabrick-buttons{
     float: right;
-    position: relative;
-    top: -38px;
-    margin-top: 6px;
-    margin-right: 12px;
-}
 
-.follow-button{
-  float: right;
-  position: relative;
-  top: -38px;
-  margin-top: 6px;
-  margin-right: 12px;
-  a{
-    &.btn-unfollow:hover{
-      background-color: #E2231A;
-      color: #fff;
+    * {
+        display: inline-block;
     }
-  }
+
+    .view-button{
+        position: relative;
+        top: -38px;
+        margin-top: 6px;
+        margin-right: 12px;
+    }
+
+    .follow-button, .review-button{
+        position: relative;
+        top: -38px;
+        margin-top: 6px;
+        margin-right: 12px;
+        a{
+            &.btn-unfollow:hover{
+            background-color: #E2231A;
+            color: #fff;
+            }
+        }
+    }
 }
